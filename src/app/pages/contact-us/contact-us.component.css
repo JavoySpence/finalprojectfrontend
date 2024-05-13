@@ -1,0 +1,45 @@
+#contactPageH51{
+    margin-top: 2rem;
+}
+
+#contactPageHero{
+    width: 280px;
+    margin-top: 3rem;
+}
+
+.contact-info{
+    background: #38598b; 
+    color: white;
+    border-radius: 8px;
+    
+
+}
+
+#homeFooter{
+    background-color: black;
+    height: 8rem;
+    margin-top: 2rem;
+}
+
+#instagram_img{
+    border-radius: 10px;
+    width: 2rem;
+    margin-left: 5.6rem;
+    margin-top: 7px;
+}
+#facebook_img{
+    border-radius: 10px;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: 7px;
+}
+
+
+p{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;     
+  }
+
+  
+

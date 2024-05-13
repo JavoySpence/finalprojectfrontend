@@ -26,12 +26,12 @@
 }
 #serviceImg3{
     width: 12rem;
-    margin-top: 1.4rem;
+    /* margin-top: 1.4rem; */
     border-radius: 20px;
     margin-left: 1.8rem;
     position: absolute;
     top: 0;
-    margin-top: 40.6rem;
+    margin-top: 41rem;
 }
 
 #service1WiHealthh5{
@@ -50,6 +50,7 @@ p{
 #homeFooter{
     background-color: black;
     height: 8rem;
+    margin-top: 2rem;
 }
 
 #instagram_img{
@@ -65,3 +66,6 @@ p{
     margin-top: 7px;
 }
 
+#getStartedMobile{
+    margin-left: 8rem;
+}

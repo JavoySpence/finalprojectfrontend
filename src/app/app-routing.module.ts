@@ -7,6 +7,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', title: 'Home page', component: HomepageComponent },
   { path: 'header', title: 'header page', component: HeaderComponent},
   { path: 'about', title: 'about page', component: AboutUsComponent},
