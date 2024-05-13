@@ -24,6 +24,15 @@
     border-radius: 20px;
     margin-left: 1rem;
 }
+#serviceImg3{
+    width: 12rem;
+    margin-top: 1.4rem;
+    border-radius: 20px;
+    margin-left: 1.8rem;
+    position: absolute;
+    top: 0;
+    margin-top: 40.6rem;
+}
 
 #service1WiHealthh5{
     margin-left: 0.3rem;
@@ -38,5 +47,21 @@ p{
   font-style: normal;     
 }
 
+#homeFooter{
+    background-color: black;
+    height: 8rem;
+}
 
+#instagram_img{
+    border-radius: 10px;
+    width: 2rem;
+    margin-left: 5.6rem;
+    margin-top: 7px;
+}
+#facebook_img{
+    border-radius: 10px;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: 7px;
+}
 
