@@ -1,87 +1,12 @@
-/* a {
-    text-decoration: none;
+#logo{
+    width: 5rem;
 }
 
-li {
-    display: inline-block; 
-    margin-left: 2rem;
-    padding-bottom: 5px;
-}
-
-#navbar {
-    background-color: black;
-    padding: 10px;
-}
-
-#navBtns {
-    margin-left: 18rem;
-} */
-@media screen and (max-width: 300px) {
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #navbar {
-        background-color: black;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-
-    #navBtns {
-        margin-left: 2rem;
-    }
-
-    li {
-        display: inline-block;
-        margin-left: 0.7rem;
-        padding-bottom: 5px;
-        font-size: 0.7rem;
-       
-    }
-
-    a {
-        text-decoration: none;
-         color: white;
-        
-    }
-
-    #homepage {
-        margin-left: 0;
-    }
-
-    #authBtns {
-       margin-left: 1.2rem;
-        width: 2.5rem;
-        display: inline-block; /* Ensure the signup button stays in line */
-    }
-}
-
-
- #head{
-        font-family: "Poetsen One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-  }
-       
-
-  #logo {
-    width: 29px;
-    position: absolute;
+ #header{
+    position: fixed;
     top: 0;
-    left: 0;
-    margin-top: 1rem;
-    margin-left: 1rem;
-  }
-
-  
+    width: 100%;
+}  
   
 
   

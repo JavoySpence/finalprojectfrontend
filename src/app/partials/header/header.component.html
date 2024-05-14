@@ -1,22 +1,23 @@
+<nav class="navbar navbar-light bg-light" data-bs-theme="dark" id="header">
+  <div class="container-fluid" id="navbar">
+      <a class="navbar-brand" href="#">
+          <img src="assets/images/logo-search-grid-1x.png" id="logo" alt="">
+      </a>
+      <div class="collapse navbar-collapse" id="navToggleMenu">
+          <ul class="navbar-nav me-auto nav">
+              <li class="nav-item"> <a routerLink="homepage" class="nav-link">{{ 'HOME' }}</a></li>
+              <li class="nav-item"><a routerLink="about-us" class="nav-link ml-2">{{ 'ABOUT' }}</a></li>
+              <li class="nav-item"><a routerLink="contact" class="nav-link ml-2">{{ 'CONTACT' }}</a></li>
+          </ul>
+      </div>
+      <button class="btn btn-secondary btn-sm ml-2 navbar-toggle collapsed" id="hamburger-btn"
+          type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#navToggleMenu">
+          <i class="fa-solid fa-bars"></i>
+      </button>
+  </div>
+</nav>
 
-<div class="container-fluid" id="navbar">
 
-
-    <div id="navBtns">
-      
-       <img src="assets/images/logo-search-grid-1x.png" id="logo" alt="">
-      <li><a routerLink="homepage" id="head">{{ 'HOME' }}</a></li>
-      <li><a routerLink="about" id="head">{{ 'ABOUT' }}</a></li>
-      <li><a routerLink="contact" id="head">{{ 'CONTACT' }}</a></li>
-    </div>
-
-    <button class="btn btn-secondary btn-sm" id="hamburger-btn">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-    
-  
-    
-</div>
 
   
 <!-- <nav class="navbar navbar-light bg-body-tertiary">
