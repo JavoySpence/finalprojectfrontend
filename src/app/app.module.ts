@@ -7,6 +7,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { FooterComponent } from './partials/footer/footer.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
     HeaderComponent,
     AboutUsComponent,
     ContactUsComponent,
+    FooterComponent,
     
   ],
   imports: [
