@@ -1,0 +1,23 @@
+#contactPageHero{
+    width: 100%;
+}
+
+#container{
+    background-color: #419CD8;
+    border-radius: 17px;
+    color: white;
+    margin-top: 1rem;
+    margin-left: 3%;
+    padding-left: 2%;
+    padding-top: 2%;
+    height: 13rem;
+    width: 80%;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+#map{
+    width: 100%;
+}
