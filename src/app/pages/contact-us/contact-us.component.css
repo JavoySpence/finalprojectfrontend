@@ -12,10 +12,12 @@
     padding-top: 2%;
     height: 13rem;
     width: 80%;
+    font-size: 3vh;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.5)
 }
 
 #map{
