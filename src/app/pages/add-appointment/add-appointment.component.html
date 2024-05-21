@@ -1,62 +1,70 @@
 <div class="container">
-    <h1>Add Appointment</h1> <br><br>
-    <form (ngSubmit)="addAppointment2(appointmentForm)" #appointmentForm="ngForm">
-      <div class="form-group">
-        <label for="first_name">First Name</label><br>
-        <input type="text" class="form-control" id="first_name" name="first_name" [(ngModel)]="first_name" required> <br><br>
-      </div>
+  <h1>Add Appointment</h1> <br><br>
+  <form (ngSubmit)="addAppointment2(appointmentForm)" #appointmentForm="ngForm">
+    <div class="form-group">
+      <label for="first_name">First Name</label><br>
+      <input type="text" class="form-control" id="first_name" name="first_name" ngModel required> <br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="last_name">Last Name</label><br>
-        <input type="text" class="form-control" id="last_name" name="last_name" [(ngModel)]="last_name" required> <br><br>
-      </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label><br>
+      <input type="text" class="form-control" id="last_name" name="last_name" ngModel required> <br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="sex">Gender</label><br>
-        <input type="text" class="form-control" id="sex" name="sex" [(ngModel)]="sex" required><br><br>
-      </div>
+    <div class="form-group">
+      <label for="sex">Gender</label><br>
+      <input type="text" class="form-control" id="sex" name="sex" ngModel required><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="DOB">Date of Birth</label><br>
-        <input type="date" class="form-control" id="DOB" name="DOB" [(ngModel)]="DOB" required><br><br>
-      </div>
+    <div class="form-group">
+      <label for="DOB">Date of Birth</label><br>
+      <input type="date" class="form-control" id="DOB" name="DOB" ngModel required><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="appointment_date">Appointment Date</label><br>
-        <input type="date" class="form-control" id="appointment_date" name="appointment_date" ngModel><br><br>
-      </div>
+    <div class="form-group">
+      <label for="appointment_date">Appointment Date</label><br>
+      <input type="date" class="form-control" id="appointment_date" name="appointment_date" ngModel><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="title">Title</label><br>
-        <input type="text" class="form-control" id="title" name="title" ngModel required><br><br>
-      </div>
+    <div class="form-group">
+      <label for="title">Title</label><br>
+      <input type="text" class="form-control" id="title" name="title" ngModel required><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="reason_for_visit">Reason for Visit</label><br>
-        <textarea class="form-control" id="reason_for_visit" name="reason_for_visit" ngModel required></textarea><br><br>
-      </div>
+    <div class="form-group">
+      <label for="reason_for_visit">Reason for Visit</label><br>
+      <textarea class="form-control" id="reason_for_visit" name="reason_for_visit" ngModel required></textarea><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="doctor_name">Doctor Name</label><br>
-        <input type="text" class="form-control" id="doctor_name" name="doctor_name" ngModel required><br><br>
-      </div>
+    <div class="form-group">
+      <label for="doctor_name">Doctor Name</label><br>
+      <input type="text" class="form-control" id="doctor_name" name="doctor_name" ngModel required><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="phone">Phone</label><br>
-        <input type="tel" class="form-control" id="phone" name="phone" ngModel required><br><br>
-      </div>
+    <div class="form-group">
+      <label for="phone">Phone</label><br>
+      <input type="tel" class="form-control" id="phone" name="phone" ngModel required><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="medical_history">Medical History</label><br>
-        <textarea class="form-control" id="medical_history" name="medical_history" ngModel required></textarea><br><br>
-      </div>
+    <div class="form-group">
+      <label for="medical_history">Medical History</label><br>
+      <textarea class="form-control" id="medical_history" name="medical_history" ngModel required></textarea><br><br>
+    </div>
 
-      <div class="form-group">
-        <label for="medications_taken">Medications Taken</label><br>
-        <textarea class="form-control" id="medications_taken" name="medications_taken" ngModel required></textarea><br><br>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-  
+    <div class="form-group">
+      <label for="medications_taken">Medications Taken</label><br>
+      <textarea class="form-control" id="medications_taken" name="medications_taken" ngModel required></textarea><br><br>
+    </div>
+
+    <div class="form-group">
+      <label for="email">email</label><br>
+      <input class="form-control" id="email" name="email" ngModel required><br><br>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
   

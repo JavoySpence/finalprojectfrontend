@@ -10,6 +10,8 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
+import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
+// import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
 
 
 @NgModule({
@@ -21,6 +23,9 @@ import { AddAppointmentComponent } from './pages/add-appointment/add-appointment
     ContactUsComponent,
     FooterComponent,
     AddAppointmentComponent,
+    AppointmentListComponent,
+    // AppointmentListComponent,
+   
   
   ],
   imports: [

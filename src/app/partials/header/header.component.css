@@ -8,6 +8,19 @@
     width: 100%;
     z-index: 1000;
 }  
+
+.navbar-nav {
+    max-height: 150px; 
+    overflow-y: auto; 
+  }
+  
+
+  #navToggleMenu{
+    width: 20%;
+  }
+
+
+  
   
 
   

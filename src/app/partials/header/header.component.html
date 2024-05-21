@@ -1,25 +1,31 @@
 <nav class="navbar navbar-light bg-light" data-bs-theme="dark" id="header">
-  <div class="container-fluid" id="navbar">
+    <div class="container-fluid" id="navbar">
       <a class="navbar-brand" href="#">
-          <img src="assets/images/logo-search-grid-1x.png" id="logo" alt="">
+        <img src="assets/images/logo-search-grid-1x.png" id="logo" alt="">
       </a>
-
+  
       <button class="btn btn-primary ms-1">Get Started</button>
-      <div class="collapse navbar-collapse" id="navToggleMenu">
-          <ul class="navbar-nav me-auto nav">
-              <li class="nav-item"> <a routerLink="homepage" class="nav-link">{{ 'HOME' }}</a></li>
-              <li class="nav-item"><a routerLink="about-us" class="nav-link ml-2">{{ 'ABOUT' }}</a></li>
-              <li class="nav-item"><a routerLink="contact" class="nav-link ml-2">{{ 'CONTACT' }}</a></li>
-              <li class="nav-item"><a routerLink="add-appointment" class="nav-link ml-2">{{ 'APPOINTMENT INPUTS' }}</a></li>
-          </ul>
-      </div>
-      <button class="btn btn-secondary btn-sm ml-1 navbar-toggle collapsed" id="hamburger-btn"
-          type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#navToggleMenu">
-          <i class="fa-solid fa-bars"></i>
-      </button>
-  </div>
-</nav>
+  
+      <div class="collapse navbar-collapse" id="navToggleMenu" style="width: 20%;">
+        <ul class="navbar-nav me-auto nav" id="navbarNav">
+          <li class="nav-item"> <a routerLink="homepage" class="nav-link">{{ 'HOME' }}</a></li>
+          <li class="nav-item"><a routerLink="about-us" class="nav-link ml-2">{{ 'ABOUT' }}</a></li>
+          <li class="nav-item"><a routerLink="contact" class="nav-link ml-2">{{ 'CONTACT' }}</a></li>
+          <li class="nav-item"><a routerLink="add-appointment" class="nav-link ml-2">{{ 'APPOINTMENT INPUTS' }}</a></li>
+          <li class="nav-item"><a routerLink="appointment-list" class="nav-link ml-2">{{ 'APPOINTMENT LIST' }}</a></li>
 
+         
+        </ul>
+      </div>
+  
+      <button class="btn btn-secondary btn-sm ml-4 navbar-toggle collapsed" id="hamburger-btn"
+        type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#navToggleMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  
 
 
   

@@ -23,4 +23,23 @@ export class AppointmentService {
     );
   
 }
+
+
+allAppointments(): Observable<any> {
+  return this._http.get<any>(this.API_URL)
+  .pipe(
+    map((res) => {
+      return res;
+    })
+  );
+
 }
+
+
+
+}
+
+
+
+
+

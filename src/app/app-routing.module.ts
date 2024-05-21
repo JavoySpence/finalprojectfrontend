@@ -6,6 +6,10 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
+import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
+
+
+
 
 
 
@@ -16,7 +20,9 @@ const routes: Routes = [
   { path: 'about-us', title: 'about page', component: AboutUsComponent},
   { path: 'contact', title: 'contact page', component: ContactUsComponent},
   { path: 'footer', title: 'footer page', component: FooterComponent},
-  { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent } 
+  { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent },
+  { path: 'appointment-list', title: 'appointment-list', component: AppointmentListComponent}
+  
 ];
  
 
