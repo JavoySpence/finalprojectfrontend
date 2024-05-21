@@ -29,6 +29,23 @@ export class AppointmentListComponent implements OnInit {
       }
     );
   }
-  
-  
+
+
+  deleteAppointment(id: number): void {
+    this.appointmentService.deleteAppointment(id).subscribe(
+      (response: any) => {
+        console.log('Appointment deleted:', response);
+        this.getAllAppointments();
+      },
+      (error) => {
+        console.error('Error deleting appointment:', error);
+      }
+    );
+  }
 }
+  
+  
+
+
+
+

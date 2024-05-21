@@ -2,46 +2,45 @@
     <table class="table table-striped" id="appointment_table">
       <thead class="table-dark mt-5">
         <tr>
-          <th>ID</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Phone</th>
-          <th>Sex</th>
-          <th>DOB</th>
-          <th>Appointment Date</th>
-          <th>Title</th>
-          <th>Reason for Visit</th>
-          <th>Doctor Name</th>
+          <th class="head" [innerHTML]="'ID'"></th>
+          <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
+          <th class="head" [innerHTML]="'Last&nbsp;Name'"></th>
+          <th class="head" [innerHTML]="'Phone'"></th>
+          <th class="head" [innerHTML]="'Sex'"></th>
+          <th class="head" [innerHTML]="'DOB'"></th>
+          <th class="head" [innerHTML]="'Appointment&nbsp;Date'"></th>
+          <th class="head" [innerHTML]="'Title'"></th>
+          <th class="head" [innerHTML]="'Reason&nbsp;for&nbsp;Visit'"></th>
+          <th class="head" [innerHTML]="'Doctor&nbsp;Name'"></th>
           <!-- <th>Doctor Phone</th> -->
-          <th>Medical History</th>
-          <th>Medications Taken</th>
-          <th>Email</th>
-          <th>Actions</th>
+          <th class="head" [innerHTML]="'Medical&nbsp;History'"></th>
+          <th class="head" [innerHTML]="'Medications&nbsp;Taken'"></th>
+          <th class="head" [innerHTML]="'Email'"></th>
+          <th class="head" [innerHTML]="'Actions'"></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
         <tr *ngFor="let appointment of appointments">
           <td>{{ appointment.id }}</td>
           <td>{{ appointment.first_name }}</td>
           <td>{{ appointment.last_name }}</td>
           <td>{{ appointment.phone }}</td>
           <td>{{ appointment.sex }}</td>
-          <td>{{ appointment.dob | date:'mediumDate' }}</td>
-          <td>{{ appointment.appointment_date | date:'mediumDate' }}</td>
+          <td class="nowrap">{{ appointment.DOB | date:'mediumDate' }}</td>
+          <td class="nowrap">{{ appointment.appointment_date | date:'mediumDate' }}</td>
           <td>{{ appointment.title }}</td>
           <td>{{ appointment.reason_for_visit }}</td>
           <td>{{ appointment.doctor_name }}</td>
-          <!-- <td>{{ appointment.doctor_phone }}</td> -->
           <td>{{ appointment.medical_history }}</td>
           <td>{{ appointment.medications_taken }}</td>
           <td>{{ appointment.email }}</td>
-          <td>
-            <!-- Actions column content -->
+          
+          <td class="action-buttons">
+            <a class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</a>
+            <a class="btn btn-success">Edit</a>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  
-  
   

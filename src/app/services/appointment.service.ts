@@ -36,6 +36,27 @@ allAppointments(): Observable<any> {
 }
 
 
+deleteAppointment(id: number): Observable<any> {
+  return this._http.delete<any>(`${this.API_URL}/${id}`).pipe(
+    map((res) => {
+      return res;
+    })
+  );
+}
+
+
+singleAppointment(id: number): Observable<any> {
+  return this._http.get<any>(`${this.API_URL}/${id}`).pipe(
+    map((res) => {
+      return res;
+    })
+  );
+}
+
+
+
+
+
 
 }
 
