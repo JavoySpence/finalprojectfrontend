@@ -22,6 +22,9 @@ export class AddAppointmentComponent {
   medications_taken: string = '';
   email: string = '';
 
+  genders: string[] = ['Male', 'Female'];
+  titleOptions: string[] = ['Mr', 'Mrs', 'Miss']; 
+
   constructor(private appointmentService: AppointmentService, private router: Router) { }
 
 

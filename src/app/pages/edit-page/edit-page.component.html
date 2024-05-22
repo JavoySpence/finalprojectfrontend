@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Add Appointment</h1> <br><br>
-  <form (ngSubmit)="addAppointment2(appointmentForm)" #appointmentForm="ngForm">
+  <h1>Edit Appointment</h1> <br><br>
+  <form #appointmentForm="ngForm" (ngSubmit)="updateAppointment(appointmentForm)">
     <div class="form-group">
       <label for="first_name">First Name</label><br>
       <input type="text" class="form-control" id="first_name" name="first_name" ngModel required> <br><br>
@@ -13,11 +13,9 @@
 
     <div class="form-group">
       <label for="sex">Gender</label><br>
-      <select class="form-control" id="sex" name="sex" ngModel required>
-        <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
-      </select><br><br>
+      <input type="text" class="form-control" id="sex" name="sex" ngModel required><br><br>
     </div>
-    
+
     <div class="form-group">
       <label for="DOB">Date of Birth</label><br>
       <input type="date" class="form-control" id="DOB" name="DOB" ngModel required><br><br>
@@ -30,9 +28,7 @@
 
     <div class="form-group">
       <label for="title">Title</label><br>
-      <select class="form-control" id="title" name="title" ngModel required>
-        <option *ngFor="let option of titleOptions" [value]="option">{{ option }}</option>
-      </select><br><br>
+      <input type="text" class="form-control" id="title" name="title" ngModel required><br><br>
     </div>
 
     <div class="form-group">
@@ -61,14 +57,10 @@
     </div>
 
     <div class="form-group">
-      <label for="email">email</label><br>
-      <input class="form-control" id="email" name="email" ngModel required><br><br>
+      <label for="email">Email</label><br>
+      <input type="email" class="form-control" id="email" name="email" ngModel required><br><br>
     </div>
-
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
-
-
-  

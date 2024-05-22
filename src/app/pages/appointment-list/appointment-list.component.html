@@ -12,7 +12,6 @@
           <th class="head" [innerHTML]="'Title'"></th>
           <th class="head" [innerHTML]="'Reason&nbsp;for&nbsp;Visit'"></th>
           <th class="head" [innerHTML]="'Doctor&nbsp;Name'"></th>
-          <!-- <th>Doctor Phone</th> -->
           <th class="head" [innerHTML]="'Medical&nbsp;History'"></th>
           <th class="head" [innerHTML]="'Medications&nbsp;Taken'"></th>
           <th class="head" [innerHTML]="'Email'"></th>
@@ -36,8 +35,11 @@
           <td>{{ appointment.email }}</td>
           
           <td class="action-buttons">
+            <a class="btn btn-warning" [routerLink]="['/view-page', appointment.id]">View</a>
+            <a class="btn btn-success" [routerLink]="['/edit-page', appointment.id]">Edit</a>
             <a class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</a>
-            <a class="btn btn-success">Edit</a>
+
+
           </td>
         </tr>
       </tbody>

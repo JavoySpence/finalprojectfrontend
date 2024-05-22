@@ -11,6 +11,8 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import { ViewPageComponent } from './pages/view-page/view-page.component';
 // import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
 
 
@@ -24,6 +26,8 @@ import { AppointmentListComponent } from './pages/appointment-list/appointment-l
     FooterComponent,
     AddAppointmentComponent,
     AppointmentListComponent,
+    EditPageComponent,
+    ViewPageComponent,
     // AppointmentListComponent,
    
   

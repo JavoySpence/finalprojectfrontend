@@ -54,6 +54,21 @@ singleAppointment(id: number): Observable<any> {
 }
 
 
+updateAppointment(id: number, info: any): Observable<any> {
+  return this._http.put<any>(`${this.API_URL}/${id}`, info).pipe(
+    map((res) => {
+      return res;
+    })
+  );
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -7,32 +7,24 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
-
-
-
-
-
+import { EditPageComponent } from './pages/edit-page/edit-page.component';
+import { ViewPageComponent } from './pages/view-page/view-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', title: 'Home page', component: HomepageComponent },
-  { path: 'header', title: 'header page', component: HeaderComponent},
-  { path: 'about-us', title: 'about page', component: AboutUsComponent},
-  { path: 'contact', title: 'contact page', component: ContactUsComponent},
-  { path: 'footer', title: 'footer page', component: FooterComponent},
+  { path: 'header', title: 'header page', component: HeaderComponent },
+  { path: 'about-us', title: 'about page', component: AboutUsComponent },
+  { path: 'contact', title: 'contact page', component: ContactUsComponent },
+  { path: 'footer', title: 'footer page', component: FooterComponent },
   { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent },
-  { path: 'appointment-list', title: 'appointment-list', component: AppointmentListComponent}
-  
+  { path: 'edit-page/:id', title: 'Edit Page', component: EditPageComponent },
+  { path: 'view-page/:id', title: 'View Page', component: ViewPageComponent },
+  { path: 'appointment-list', title: 'appointment-list', component: AppointmentListComponent }
 ];
- 
-
- 
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-
-}
+export class AppRoutingModule { }
