@@ -1,0 +1,33 @@
+<div class="container d-flex flex-column">
+    <div style="margin-top: 7rem;">
+      
+      <div *ngIf="doctors.length > 0; else noDoctors">
+        <table class="table table-striped mt-5" >
+          <thead class="table-dark">
+            <tr>
+              <th class="head" [innerHTML]="'ID'"></th>
+              <th class="head" [innerHTML]="'Image'"></th>
+              <th class="head" [innerHTML]="'First Name'"></th>
+              <th class="head" [innerHTML]="'Last Name'"></th>
+              <th class="head" [innerHTML]="'Speciality'"></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr *ngFor="let doctor of doctors">
+              <td>{{ doctor.id }}</td>
+              <td>{{ doctor.image }}</td>
+              <td>{{ doctor.first_name }}</td>
+              <td>{{ doctor.last_name }}</td>
+              <td>{{ doctor.speciality }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noDoctors>
+        <p>No doctors available.</p>
+      </ng-template>
+    </div>
+    
+  </div>
+  
+  

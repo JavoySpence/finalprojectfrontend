@@ -13,6 +13,7 @@ import { AddAppointmentComponent } from './pages/add-appointment/add-appointment
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { ViewPageComponent } from './pages/view-page/view-page.component';
+import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component';
 // import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
 
 
@@ -28,6 +29,7 @@ import { ViewPageComponent } from './pages/view-page/view-page.component';
     AppointmentListComponent,
     EditPageComponent,
     ViewPageComponent,
+    DoctorPageComponent,
     // AppointmentListComponent,
    
   

@@ -9,6 +9,7 @@ import { AddAppointmentComponent } from './pages/add-appointment/add-appointment
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { ViewPageComponent } from './pages/view-page/view-page.component';
+import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent },
   { path: 'edit-page/:id', title: 'Edit Page', component: EditPageComponent },
   { path: 'view-page/:id', title: 'View Page', component: ViewPageComponent },
-  { path: 'appointment-list', title: 'appointment-list', component: AppointmentListComponent }
+  { path: 'appointment-list', title: 'Appointment Page', component: AppointmentListComponent },
+  { path: 'doctors-page', title: 'Doctors Page', component: DoctorPageComponent}
 ];
 
 @NgModule({

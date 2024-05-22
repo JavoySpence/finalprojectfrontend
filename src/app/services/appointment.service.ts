@@ -65,14 +65,6 @@ updateAppointment(id: number, info: any): Observable<any> {
 
 
 
-
-
-
-
-
-
-
-
 }
 
 
