@@ -7,22 +7,26 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
+import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component'; // Correct import
+import { CreateDoctorsComponent } from './pages/create-doctors/create-doctors.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
-import { ViewPageComponent } from './pages/view-page/view-page.component';
-import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component';
+import { EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component'; // Corrected to EditDoctorsComponent
+import { ViewPageComponent } from './pages/view-page/view-page.component'; // Make sure this component exists and is correctly imported
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', title: 'Home page', component: HomepageComponent },
-  { path: 'header', title: 'header page', component: HeaderComponent },
-  { path: 'about-us', title: 'about page', component: AboutUsComponent },
-  { path: 'contact', title: 'contact page', component: ContactUsComponent },
-  { path: 'footer', title: 'footer page', component: FooterComponent },
+  { path: 'header', title: 'Header page', component: HeaderComponent },
+  { path: 'about-us', title: 'About page', component: AboutUsComponent },
+  { path: 'contact', title: 'Contact page', component: ContactUsComponent },
+  { path: 'footer', title: 'Footer page', component: FooterComponent },
   { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent },
   { path: 'edit-page/:id', title: 'Edit Page', component: EditPageComponent },
-  { path: 'view-page/:id', title: 'View Page', component: ViewPageComponent },
+  { path: 'edit-doctors/:id', title: 'Edit Doctor', component: EditDoctorsComponent }, 
+  { path: 'view-page/:id', title: 'View Page', component: ViewPageComponent }, 
   { path: 'appointment-list', title: 'Appointment Page', component: AppointmentListComponent },
-  { path: 'doctors-page', title: 'Doctors Page', component: DoctorPageComponent}
+  { path: 'doctors-page', title: 'Doctors Page', component: DoctorPageComponent },
+  { path: 'create-doctors', title: 'Create Doctors', component: CreateDoctorsComponent }
 ];
 
 @NgModule({

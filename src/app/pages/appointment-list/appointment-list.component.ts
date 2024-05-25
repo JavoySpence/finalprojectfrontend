@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-appointment-list',
@@ -8,12 +9,14 @@ import { AppointmentService } from 'src/app/services/appointment.service';
 })
 export class AppointmentListComponent implements OnInit {
   appointments: any[] = [];
- 
+  totalAppointmentsCount$: Observable<number> | null = null;
+  p: number = 1; 
 
   constructor(private appointmentService: AppointmentService) {}
 
   ngOnInit(): void {
     this.getAllAppointments();
+  
   }
 
   getAllAppointments(): void {
@@ -32,11 +35,13 @@ export class AppointmentListComponent implements OnInit {
   }
 
 
+
   deleteAppointment(id: number): void {
     this.appointmentService.deleteAppointment(id).subscribe(
       (response: any) => {
         console.log('Appointment deleted:', response);
         this.getAllAppointments();
+       
       },
       (error) => {
         console.error('Error deleting appointment:', error);
@@ -44,9 +49,3 @@ export class AppointmentListComponent implements OnInit {
     );
   }
 }
-  
-  
-
-
-
-

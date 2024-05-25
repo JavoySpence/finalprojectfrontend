@@ -17,7 +17,7 @@ export class DoctorPageComponent implements OnInit {
   }
 
   getAllDoctors(): void {
-    this.doctorService.allDoctors().subscribe(
+    this.doctorService.getAllDoctors().subscribe(
       (data: any) => {
         if (data && data.status === 'success' && Array.isArray(data.data.doctors)) {
           this.doctors = data.data.doctors;
@@ -30,6 +30,23 @@ export class DoctorPageComponent implements OnInit {
       }
     );
   }
+
+  deleteSingleDoctor(id: number): void {
+    this.doctorService.deleteDoctor(id).subscribe(
+      (response: any) => {
+        console.log('Doctor deleted:', response);
+        this.getAllDoctors(); 
+      },
+      (error) => {
+        console.error('Error deleting doctor:', error);
+      }
+    );
+  }
 }
+
+
+
+
+
 
 

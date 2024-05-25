@@ -1,48 +1,48 @@
 <div style="overflow-x: auto;">
-    <table class="table table-striped" id="appointment_table">
-      <thead class="table-dark mt-5">
-        <tr>
-          <th class="head" [innerHTML]="'ID'"></th>
-          <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
-          <th class="head" [innerHTML]="'Last&nbsp;Name'"></th>
-          <th class="head" [innerHTML]="'Phone'"></th>
-          <th class="head" [innerHTML]="'Sex'"></th>
-          <th class="head" [innerHTML]="'DOB'"></th>
-          <th class="head" [innerHTML]="'Appointment&nbsp;Date'"></th>
-          <th class="head" [innerHTML]="'Title'"></th>
-          <th class="head" [innerHTML]="'Reason&nbsp;for&nbsp;Visit'"></th>
-          <th class="head" [innerHTML]="'Doctor&nbsp;Name'"></th>
-          <th class="head" [innerHTML]="'Medical&nbsp;History'"></th>
-          <th class="head" [innerHTML]="'Medications&nbsp;Taken'"></th>
-          <th class="head" [innerHTML]="'Email'"></th>
-          <th class="head" [innerHTML]="'Actions'"></th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr *ngFor="let appointment of appointments">
-          <td>{{ appointment.id }}</td>
-          <td>{{ appointment.first_name }}</td>
-          <td>{{ appointment.last_name }}</td>
-          <td>{{ appointment.phone }}</td>
-          <td>{{ appointment.sex }}</td>
-          <td class="nowrap">{{ appointment.DOB | date:'mediumDate' }}</td>
-          <td class="nowrap">{{ appointment.appointment_date | date:'mediumDate' }}</td>
-          <td>{{ appointment.title }}</td>
-          <td>{{ appointment.reason_for_visit }}</td>
-          <td>{{ appointment.doctor_name }}</td>
-          <td>{{ appointment.medical_history }}</td>
-          <td>{{ appointment.medications_taken }}</td>
-          <td>{{ appointment.email }}</td>
-          
-          <td class="action-buttons">
-            <a class="btn btn-warning" [routerLink]="['/view-page', appointment.id]">View</a>
-            <a class="btn btn-success" [routerLink]="['/edit-page', appointment.id]">Edit</a>
-            <a class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</a>
+  <table class="table table-striped" id="appointment_table">
+    <thead class="table-dark mt-5">
+      <tr>
+        <th class="head" [innerHTML]="'ID'"></th>
+        <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
+        <th class="head" [innerHTML]="'Last&nbsp;Name'"></th>
+        <th class="head" [innerHTML]="'Phone'"></th>
+        <th class="head" [innerHTML]="'Sex'"></th>
+        <th class="head" [innerHTML]="'DOB'"></th>
+        <th class="head" [innerHTML]="'Appointment&nbsp;Date'"></th>
+        <th class="head" [innerHTML]="'Title'"></th>
+        <th class="head" [innerHTML]="'Reason&nbsp;for&nbsp;Visit'"></th>
+        <th class="head" [innerHTML]="'Doctor&nbsp;Name'"></th>
+        <th class="head" [innerHTML]="'Medical&nbsp;History'"></th>
+        <th class="head" [innerHTML]="'Medications&nbsp;Taken'"></th>
+        <th class="head" [innerHTML]="'Email'"></th>
+        <th class="head" [innerHTML]="'Actions'"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let appointment of appointments | paginate: { itemsPerPage: 10, currentPage: p }">
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.first_name }}</td>
+        <td>{{ appointment.last_name }}</td>
+        <td>{{ appointment.phone }}</td>
+        <td>{{ appointment.sex }}</td>
+        <td class="nowrap">{{ appointment.DOB | date:'mediumDate' }}</td>
+        <td class="nowrap">{{ appointment.appointment_date | date:'mediumDate' }}</td>
+        <td>{{ appointment.title }}</td>
+        <td>{{ appointment.reason_for_visit }}</td>
+        <td>{{ appointment.doctor_name }}</td>
+        <td>{{ appointment.medical_history }}</td>
+        <td>{{ appointment.medications_taken }}</td>
+        <td>{{ appointment.email }}</td>
+        <td class="action-buttons">
+          <a class="btn btn-warning" [routerLink]="['/view-page', appointment.id]">View</a>
+          <a class="btn btn-success" [routerLink]="['/edit-page', appointment.id]">Edit</a>
+          <a class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <!-- Pagination Controls -->
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  

@@ -12,11 +12,12 @@
 .navbar-nav {
     max-height: 150px; 
     overflow-y: auto; 
+    width: 100%;
   }
   
 
   #navToggleMenu{
-    width: 20%;
+    width: 100%;
   }
 
 
