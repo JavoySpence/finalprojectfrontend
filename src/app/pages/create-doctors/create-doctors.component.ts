@@ -23,7 +23,7 @@ export class CreateDoctorsComponent {
     this.doctorsService.createNewDoctor(doctorData).subscribe(
       (response: any) => {
         console.log('Doctor created successfully:', response);
-        // Additional handling after creating a doctor
+        
       },
       (error: any) => {
         console.error('Error creating doctor:', error);

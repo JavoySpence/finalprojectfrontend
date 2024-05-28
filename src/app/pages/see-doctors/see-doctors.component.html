@@ -1,0 +1,23 @@
+<!-- see-doctors.component.html -->
+<div class="container d-flex flex-column">
+  <div style="margin-top: 7rem;">
+      <div *ngIf="doctors.length > 0">
+          <div class="row mt-5">
+              <div class="col-12 col-md-6 col-lg-4" *ngFor="let doctor of doctors">
+                  <div class="card mb-3">
+                      <!-- Use interpolation to set the src attribute -->
+                      <img [src]="'http://localhost:8081/uploads/' + doctor.image" class="card-img-top" alt="Doctor Image">
+                      <div class="card-body">
+                          <h5 class="card-title">Dr. {{ doctor.first_name }} {{ doctor.last_name }}</h5>
+                          <p class="card-text">Speciality: {{ doctor.speciality }}</p>
+                          <!-- You can add more details here if needed -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <ng-template *ngIf="doctors.length === 0">
+          <p>No doctor available.</p>
+      </ng-template>
+  </div>
+</div>

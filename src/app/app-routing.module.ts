@@ -7,26 +7,32 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { AddAppointmentComponent } from './pages/add-appointment/add-appointment.component';
 import { AppointmentListComponent } from './pages/appointment-list/appointment-list.component';
-import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component'; // Correct import
+import { DoctorPageComponent } from './pages/doctor-page/doctor-page.component';
 import { CreateDoctorsComponent } from './pages/create-doctors/create-doctors.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
-import { EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component'; // Corrected to EditDoctorsComponent
-import { ViewPageComponent } from './pages/view-page/view-page.component'; // Make sure this component exists and is correctly imported
+import { EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component';
+import { ViewPageComponent } from './pages/view-page/view-page.component';
+import { SeeDoctorsComponent } from './pages/see-doctors/see-doctors.component'; 
+import { RescheduleAppointmentComponent } from './pages/reschedule-appointment/reschedule-appointment.component';
+import { CreateRescheduleComponent } from './pages/create-reschedule/create-reschedule.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
-  { path: 'homepage', title: 'Home page', component: HomepageComponent },
-  { path: 'header', title: 'Header page', component: HeaderComponent },
-  { path: 'about-us', title: 'About page', component: AboutUsComponent },
-  { path: 'contact', title: 'Contact page', component: ContactUsComponent },
-  { path: 'footer', title: 'Footer page', component: FooterComponent },
-  { path: 'add-appointment', title: 'Add Appointment', component: AddAppointmentComponent },
-  { path: 'edit-page/:id', title: 'Edit Page', component: EditPageComponent },
-  { path: 'edit-doctors/:id', title: 'Edit Doctor', component: EditDoctorsComponent }, 
-  { path: 'view-page/:id', title: 'View Page', component: ViewPageComponent }, 
-  { path: 'appointment-list', title: 'Appointment Page', component: AppointmentListComponent },
-  { path: 'doctors-page', title: 'Doctors Page', component: DoctorPageComponent },
-  { path: 'create-doctors', title: 'Create Doctors', component: CreateDoctorsComponent }
+  { path: 'homepage', component: HomepageComponent },
+  { path: 'header', component: HeaderComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'contact', component: ContactUsComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'add-appointment', component: AddAppointmentComponent },
+  { path: 'edit-page/:id', component: EditPageComponent },
+  { path: 'edit-doctors/:id', component: EditDoctorsComponent }, 
+  { path: 'view-page/:id', component: ViewPageComponent }, 
+  { path: 'appointment-list', component: AppointmentListComponent },
+  { path: 'doctors-page', component: DoctorPageComponent },
+  { path: 'see-doctors', component: SeeDoctorsComponent }, 
+  { path: 'create-doctors', component: CreateDoctorsComponent }, 
+  { path: 'create-reschedule', component: CreateRescheduleComponent }, // New route for CreateRescheduleComponent
+  { path: 'reschedule-appointment', component: RescheduleAppointmentComponent }
 ];
 
 @NgModule({
@@ -34,3 +40,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

@@ -1,19 +1,20 @@
+// see-doctors.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'app-doctor-page',
-  templateUrl: './doctor-page.component.html',
-  styleUrls: ['./doctor-page.component.css']
+  selector: 'see-doctors',
+  templateUrl: './see-doctors.component.html',
+  styleUrls: ['./see-doctors.component.css']
 })
-export class DoctorPageComponent implements OnInit {
+export class SeeDoctorsComponent implements OnInit {
   doctors: any[] = [];
 
-  constructor(private doctorService: DoctorsService) {}
+  constructor(private doctorService: DoctorsService) { }
 
   ngOnInit(): void {
-    this.getAllDoctors();
+    this.getAllDoctors();  
   }
 
   getAllDoctors(): void {
@@ -27,18 +28,6 @@ export class DoctorPageComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         console.error('Error fetching doctors:', error);
-      }
-    );
-  }
-
-  deleteSingleDoctor(id: number): void {
-    this.doctorService.deleteDoctor(id).subscribe(
-      (response: any) => {
-        console.log('Doctor deleted:', response);
-        this.getAllDoctors(); 
-      },
-      (error) => {
-        console.error('Error deleting doctor:', error);
       }
     );
   }

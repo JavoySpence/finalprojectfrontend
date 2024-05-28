@@ -21,7 +21,11 @@ import {EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component
 import {ViewPageComponent } from './pages/view-page/view-page.component';
 import { CreateDoctorsComponent } from './pages/create-doctors/create-doctors.component';
 import { ViewDoctorComponent } from './pages/view-doctor/view-doctor.component';
-import { DoctorPage2Component } from './pages/doctor-page2/doctor-page2.component';
+import { SeeDoctorsComponent } from './pages/see-doctors/see-doctors.component';
+import { RescheduleAppointmentComponent } from './pages/reschedule-appointment/reschedule-appointment.component';
+import { CreateRescheduleComponent } from './pages/create-reschedule/create-reschedule.component';
+
+
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { DoctorPage2Component } from './pages/doctor-page2/doctor-page2.componen
     CreateDoctorsComponent,
     EditDoctorsComponent,
     ViewDoctorComponent,
-    DoctorPage2Component,
+    SeeDoctorsComponent,
+    RescheduleAppointmentComponent,
+    CreateRescheduleComponent
+   
+  
   ],
   imports: [
     BrowserModule,

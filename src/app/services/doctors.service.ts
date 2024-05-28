@@ -29,8 +29,8 @@ export class DoctorsService {
       );
   }
 
-  updateDoctor(doctorId: number, doctorData: any): Observable<any> {
-    return this.http.put<any>(`${this.API_URL}/${doctorId}`, doctorData)
+  updateDoctor(id: number, doctorData: any): Observable<any> {
+    return this.http.put<any>(`${this.API_URL}/${id}`, doctorData)
       .pipe(
         map((res) => {
           return res;
@@ -39,7 +39,7 @@ export class DoctorsService {
   }
 
   deleteDoctor(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.API_URL}/${id}`); // Correct interpolation of id here
+    return this.http.delete<any>(`${this.API_URL}/${id}`); 
   }
 
   getAllDoctors(): Observable<any> {

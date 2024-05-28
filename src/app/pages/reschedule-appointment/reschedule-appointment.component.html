@@ -1,0 +1,36 @@
+<div *ngIf="appointments.length > 0; else noData">
+    <table class="table table-striped" style="margin-top: 8rem;">
+      <thead class="table-dark mt-5">
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Original Time</th>
+          <th>New Time</th>
+          <th>Reason for Rescheduling</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appointments">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.first_name }}</td>
+          <td>{{ appointment.last_name }}</td>
+          <td>{{ appointment.phone }}</td>
+          <td>{{ appointment.email }}</td>
+          <td>{{ appointment.original_time | date: 'medium' }}</td>
+          <td>{{ appointment.new_time | date: 'medium' }}</td>
+          <td>{{ appointment.reason_for_rescheduling }}</td>
+          <td>
+            <a class="btn btn-danger me-2" (click)="deleteSingleReschedule(appointment.id)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noData>
+    <p>No rescheduled appointments found.</p>
+  </ng-template>
+  
