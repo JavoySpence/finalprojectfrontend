@@ -24,6 +24,9 @@ import { ViewDoctorComponent } from './pages/view-doctor/view-doctor.component';
 import { SeeDoctorsComponent } from './pages/see-doctors/see-doctors.component';
 import { RescheduleAppointmentComponent } from './pages/reschedule-appointment/reschedule-appointment.component';
 import { CreateRescheduleComponent } from './pages/create-reschedule/create-reschedule.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
+import { FeedbackListComponent } from './pages/feedback-list/feedback-list.component';
+import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbacks-page.component';
 
 
 
@@ -46,7 +49,10 @@ import { CreateRescheduleComponent } from './pages/create-reschedule/create-resc
     ViewDoctorComponent,
     SeeDoctorsComponent,
     RescheduleAppointmentComponent,
-    CreateRescheduleComponent
+    CreateRescheduleComponent,
+    FeedbackComponent,
+    FeedbackListComponent,
+    ViewFeedbacksComponent
    
   
   ],

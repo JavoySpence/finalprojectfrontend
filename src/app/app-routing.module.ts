@@ -15,6 +15,10 @@ import { ViewPageComponent } from './pages/view-page/view-page.component';
 import { SeeDoctorsComponent } from './pages/see-doctors/see-doctors.component'; 
 import { RescheduleAppointmentComponent } from './pages/reschedule-appointment/reschedule-appointment.component';
 import { CreateRescheduleComponent } from './pages/create-reschedule/create-reschedule.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
+import { FeedbackListComponent } from './pages/feedback-list/feedback-list.component';
+import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbacks-page.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -31,13 +35,17 @@ const routes: Routes = [
   { path: 'doctors-page', component: DoctorPageComponent },
   { path: 'see-doctors', component: SeeDoctorsComponent }, 
   { path: 'create-doctors', component: CreateDoctorsComponent }, 
-  { path: 'create-reschedule', component: CreateRescheduleComponent }, // New route for CreateRescheduleComponent
-  { path: 'reschedule-appointment', component: RescheduleAppointmentComponent }
+  { path: 'create-reschedule', component: CreateRescheduleComponent }, 
+  { path: 'reschedule-appointment', component: RescheduleAppointmentComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'feedback-list', component: FeedbackListComponent },
+  { path: 'view-feedbacks-page', component: ViewFeedbacksComponent } 
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

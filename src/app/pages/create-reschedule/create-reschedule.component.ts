@@ -17,11 +17,11 @@ export class CreateRescheduleComponent {
       this.rescheduleService.createReschedule(formData).subscribe(
         (response: any) => {
           console.log('Reschedule created:', response);
-          // Optionally, you can navigate to another page or show a success message.
+
         },
         (error) => {
           console.error('Error creating reschedule:', error);
-          // Optionally, you can show an error message to the user.
+          
         }
       );
     }

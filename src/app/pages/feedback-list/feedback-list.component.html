@@ -1,0 +1,30 @@
+<div style="overflow-x: auto; margin-top: 8rem;" >
+    <table class="table table-striped" id="feedback_table">
+      <thead class="table-dark mt-5">
+        <tr>
+          <th class="head" [innerHTML]="'ID'"></th>
+          <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
+          <th class="head" [innerHTML]="'Last&nbsp;Name'"></th>
+          <th class="head" [innerHTML]="'Feedback'"></th>
+          <th class="head" [innerHTML]="'Actions'"></th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let feedback of feedbacks | paginate: { itemsPerPage: 10, currentPage: p }">
+          <td>{{ feedback.id }}</td>
+          <td>{{ feedback.first_name }}</td>
+          <td>{{ feedback.last_name }}</td>
+          <td>{{ feedback.feedback }}</td>
+          <td class="action-buttons">
+            <!-- <a class="btn btn-warning" [routerLink]="['/view-page', feedback.id]">View</a>
+            <a class="btn btn-success" [routerLink]="['/edit-page', feedback.id]">Edit</a> -->
+            <a class="btn btn-danger me-2" (click)="deleteFeedback(feedback.id)">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+  </div>
+  
