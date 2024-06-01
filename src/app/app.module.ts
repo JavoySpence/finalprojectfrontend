@@ -27,6 +27,7 @@ import { CreateRescheduleComponent } from './pages/create-reschedule/create-resc
 import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { FeedbackListComponent } from './pages/feedback-list/feedback-list.component';
 import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbacks-page.component';
+import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropdown.component';
 
 
 
@@ -52,7 +53,8 @@ import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbac
     CreateRescheduleComponent,
     FeedbackComponent,
     FeedbackListComponent,
-    ViewFeedbacksComponent
+    ViewFeedbacksComponent,
+    DoctorsDropdownComponent
    
   
   ],

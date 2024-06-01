@@ -48,4 +48,20 @@ export class AppointmentListComponent implements OnInit {
       }
     );
   }
+
+
+  getAllDoctors(): void {
+    this.appointmentService.allDoctors().subscribe(
+      (data: any) => {
+        if (data && data.status === 'success' && Array.isArray(data.data.appointments)) {
+          this.appointments = data.data.appointments;
+        } else {
+          console.error('Invalid data format:', data);
+        }
+      },
+      (error) => {
+        console.error('Error fetching appointments:', error);
+      }
+    );
+  }
 }

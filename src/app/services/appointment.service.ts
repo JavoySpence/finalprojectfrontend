@@ -9,6 +9,8 @@ import { map } from 'rxjs/operators';
 export class AppointmentService {
 
   private API_URL = 'http://localhost:8081/api/v1/appointments';
+  private API_URL2 ='http://localhost:8081/api/v1/doctors';
+
 
   constructor(private _http: HttpClient) { }
 
@@ -59,4 +61,16 @@ export class AppointmentService {
       })
     );
   }
+
+
+   
+  allDoctors(): Observable<any> {
+    return this._http.get<any>(this.API_URL2)
+      .pipe(
+        map((res) => {
+          return res;
+        })
+      );
+  }
+
 }

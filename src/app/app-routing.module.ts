@@ -18,6 +18,7 @@ import { CreateRescheduleComponent } from './pages/create-reschedule/create-resc
 import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { FeedbackListComponent } from './pages/feedback-list/feedback-list.component';
 import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbacks-page.component';
+import { DoctorsDropdownComponent} from './pages/doctors-dropdown/doctors-dropdown.component'
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'reschedule-appointment', component: RescheduleAppointmentComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: 'feedback-list', component: FeedbackListComponent },
-  { path: 'view-feedbacks-page', component: ViewFeedbacksComponent } 
+  { path: 'view-feedbacks-page/:id', component: ViewFeedbacksComponent },
+  { path: 'doctors-dropdown', component: DoctorsDropdownComponent }
 ];
 
 

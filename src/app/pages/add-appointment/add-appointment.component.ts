@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Router } from '@angular/router';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-appointment',
@@ -25,8 +25,12 @@ export class AddAppointmentComponent {
   genders: string[] = ['Male', 'Female'];
   titleOptions: string[] = ['Mr', 'Mrs', 'Miss']; 
 
-  constructor(private appointmentService: AppointmentService, private router: Router) { }
+  appointments: any[] = []; 
+  doctors: any[] = []
 
+  selectedDoctorName: string = ''; 
+
+  constructor(private appointmentService: AppointmentService, private router: Router) { }
 
   addAppointment2(myForm: NgForm){
     const addApp = this.appointmentService.newAppointments(myForm.value).subscribe({
@@ -39,5 +43,23 @@ export class AddAppointmentComponent {
       }
     });
   }
-}
 
+
+  getAllDoctors(): void {
+    this.appointmentService.allDoctors().subscribe(
+      (data: any) => {
+        if (data && data.status === 'success' && Array.isArray(data.data.doctors)) {
+          this.doctors = data.data.doctors.map((doctors: any) => doctors.name);
+          console.log('Fetched doctor names:', this.doctors); 
+        } else {
+          console.error('Invalid data format:', data);
+        }
+      },
+      (error) => {
+        console.error('Error fetching doctors:', error);
+      }
+    );
+  }
+  
+
+}

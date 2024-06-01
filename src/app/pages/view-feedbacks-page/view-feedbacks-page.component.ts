@@ -16,11 +16,13 @@ export class ViewFeedbacksComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     if (this.id > 0) {
-      this.feedbackService.getSingleFeedback(this.id).subscribe(res => {
+      this.feedbackService.getSingleFeedbacks(this.id).subscribe(res => {
         if (res['status'] === 'success') {
           this.feedback = res['data']['feedback'];
+          console.log(this.feedback)
         }
       });
     }
   }
 }
+

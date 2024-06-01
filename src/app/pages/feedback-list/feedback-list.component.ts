@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class FeedbackListComponent implements OnInit {
   feedbacks: any[] = [];
-  p: number = 1;
+  p: number = 0;
   constructor(private feedbackService: FeedbackService) {}
 
   ngOnInit(): void {

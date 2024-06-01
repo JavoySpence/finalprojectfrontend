@@ -1,0 +1,9 @@
+<div class="form-group" style="margin-top: 10rem;">
+    <label for="doctor_name">Doctor Name</label><br>
+    <select class="form-control" id="doctor_name" name="doctor_name">
+      <option value="" disabled selected>Select Doctor</option>
+      <option *ngFor="let doctor of doctors" [value]="doctor.first_name + ' ' + doctor.last_name">{{ doctor.first_name }} {{ doctor.last_name }}</option>
+    </select><br><br>
+</div>
+  
+  

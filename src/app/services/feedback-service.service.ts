@@ -33,9 +33,14 @@ export class FeedbackService {
     return this.http.delete<any>(`${this.API_URL}/${id}`); 
   }
 
-  getSingleFeedback(id: number): Observable<any> {
-    return this.http.get<any>(`${this.API_URL}/${id}`); 
+  getSingleFeedbacks(id: number): Observable<any> {
+    return this.http.get<any>(`${this.API_URL}/${id}`).pipe(
+      map((res) => {
+        return res;
+      })
+    );
   }
+
 }
 
 

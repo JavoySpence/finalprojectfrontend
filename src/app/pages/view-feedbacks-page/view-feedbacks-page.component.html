@@ -1,33 +1,20 @@
 <div *ngIf="feedback" style="margin-top: 7rem;">
-    <table class="table table-bordered mt-5">
-      <tr>
-        <th>ID</th>
-        <td>{{ feedback.id }}</td>
-      </tr>
-      <tr>
-        <th>First Name</th>
-        <td>{{ feedback.first_name }}</td>
-      </tr>
-      <tr>
-        <th>Last Name</th>
-        <td>{{ feedback.last_name }}</td>
-      </tr>
-      <tr>
-        <th>Phone</th>
-        <td>{{ feedback.phone }}</td>
-      </tr>
-      <tr>
-        <th>Gender</th>
-        <td>{{ feedback.sex }}</td>
-      </tr>
-      <tr>
-        <th>Date of Birth</th>
-        <td class="nowrap">{{ feedback.DOB | date:'mediumDate' }}</td>
-      </tr>
-      <tr>
-        <th>Feedback</th>
-        <td>{{ feedback.feedback }}</td>
-      </tr>
-    </table>
-  </div>
-  
+  <table class="table table-bordered mt-5">
+    <!-- <tr>
+      <th>ID</th>
+      <td>{{ feedback.id }}</td>
+    </tr> -->
+    <tr>
+      <th>First Name</th>
+      <td>{{ feedback.first_name }}</td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td>{{ feedback.last_name }}</td>
+    </tr>
+    <tr>
+      <th>Feedback</th>
+      <td>{{ feedback.feedback }}</td>
+    </tr>
+  </table>
+</div>
