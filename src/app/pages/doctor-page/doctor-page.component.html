@@ -13,10 +13,8 @@
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          <tr *ngFor="let doctor of doctors">
-            <td>
-              {{ doctor.image }}
-            </td>
+          <tr *ngFor="let doctor of doctors | paginate: { itemsPerPage: 5, currentPage: p }">
+            <td>{{ doctor.image }}</td>
             <td>{{ doctor.first_name }}</td>
             <td>{{ doctor.last_name }}</td>
             <td>{{ doctor.speciality }}</td>
@@ -27,9 +25,11 @@
           </tr>
         </tbody>
       </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
     <ng-template #noDoctors>
       <p>No doctor available.</p>
     </ng-template>
   </div>
 </div>
+

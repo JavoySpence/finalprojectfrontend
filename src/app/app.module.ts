@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -67,6 +68,7 @@ import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropd
     MatPaginatorModule,
     MatTableModule,
     NgxPaginationModule,
+    CommonModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

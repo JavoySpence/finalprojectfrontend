@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './add-appointment.component.html',
   styleUrls: ['./add-appointment.component.css']
 })
-export class AddAppointmentComponent {
+export class AddAppointmentComponent implements OnInit {
   first_name: string = '';
   last_name: string = '';
   sex: string = '';
@@ -32,6 +32,10 @@ export class AddAppointmentComponent {
 
   constructor(private appointmentService: AppointmentService, private router: Router) { }
 
+ ngOnInit(): void {
+   this.getAllDoctors();
+ }
+
   addAppointment2(myForm: NgForm){
     const addApp = this.appointmentService.newAppointments(myForm.value).subscribe({
       next: (res) => {
@@ -47,16 +51,16 @@ export class AddAppointmentComponent {
 
   getAllDoctors(): void {
     this.appointmentService.allDoctors().subscribe(
-      (data: any) => {
-        if (data && data.status === 'success' && Array.isArray(data.data.doctors)) {
-          this.doctors = data.data.doctors.map((doctors: any) => doctors.name);
-          console.log('Fetched doctor names:', this.doctors); 
+      (res: any) => {
+        if (res.status === 'success'){
+          this.doctors = res.data! ['doctors']
+          console.log(`Fetched doctor names: ${JSON.stringify(this.doctors)}`); 
         } else {
-          console.error('Invalid data format:', data);
+          // console.error('Invalid data format:', data);
         }
       },
       (error) => {
-        console.error('Error fetching doctors:', error);
+        console.error('Error fetching doctors:', error);  
       }
     );
   }

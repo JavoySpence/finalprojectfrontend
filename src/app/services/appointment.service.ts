@@ -9,8 +9,7 @@ import { map } from 'rxjs/operators';
 export class AppointmentService {
 
   private API_URL = 'http://localhost:8081/api/v1/appointments';
-  private API_URL2 ='http://localhost:8081/api/v1/doctors';
-
+  private API_URL2 = 'http://localhost:8081/api/v1/doctors';
 
   constructor(private _http: HttpClient) { }
 
@@ -18,17 +17,18 @@ export class AppointmentService {
 
   newAppointments(info: any = {}): Observable<any> {
     return this._http.post<any>(this.API_URL, info)
-    .pipe(
-      map((res) => {
-        return res;
-      })
-    );
+      .pipe(
+        map((res) => {
+          return res;
+        })
+      );
   }
 
-  allAppointments(page: number = 0, size: number = 5): Observable<any> {
+  allAppointments(searchTerm: string = '', pageIndex: number = 0, pageSize: number = 10): Observable<any> {
     let params = new HttpParams()
-      .set('page', page.toString())
-      .set('size', size.toString());
+      .set('searchTerm', searchTerm)
+      .set('page', pageIndex.toString())
+      .set('limit', pageSize.toString());
     
     return this._http.get<any>(this.API_URL, { params })
       .pipe(
@@ -62,8 +62,6 @@ export class AppointmentService {
     );
   }
 
-
-   
   allDoctors(): Observable<any> {
     return this._http.get<any>(this.API_URL2)
       .pipe(
@@ -72,5 +70,4 @@ export class AppointmentService {
         })
       );
   }
-
 }

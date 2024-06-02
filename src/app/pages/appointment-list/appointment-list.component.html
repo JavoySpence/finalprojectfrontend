@@ -1,6 +1,14 @@
 <div style="overflow-x: auto;">
   <table class="table table-striped" id="appointment_table">
-    <thead class="table-dark mt-5">
+    <thead class="table-dark" style="width: 100%;">
+      <tr>
+        <th colspan="14">
+          <div style="display: flex; align-items: center; justify-content: center;">
+            <input type="text" [(ngModel)]="searchTerm" placeholder="Search...">
+            <button (click)="onSearch()">Search</button>
+          </div>
+        </th>
+      </tr>
       <tr>
         <th class="head" [innerHTML]="'ID'"></th>
         <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
@@ -19,7 +27,7 @@
       </tr>
     </thead>
     <tbody class="table-group-divider">
-      <tr *ngFor="let appointment of appointments | paginate: { itemsPerPage: 10, currentPage: p }">
+      <tr *ngFor="let appointment of appointments | paginate: { itemsPerPage: 4, currentPage: p }">
         <td>{{ appointment.id }}</td>
         <td>{{ appointment.first_name }}</td>
         <td>{{ appointment.last_name }}</td>
@@ -41,8 +49,5 @@
       </tr>
     </tbody>
   </table>
-
-  <!-- Pagination Controls -->
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
-

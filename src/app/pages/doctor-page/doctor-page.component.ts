@@ -9,6 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DoctorPageComponent implements OnInit {
   doctors: any[] = [];
+  p: number = 1;
 
   constructor(private doctorService: DoctorsService) {}
 
@@ -43,3 +44,4 @@ export class DoctorPageComponent implements OnInit {
     );
   }
 }
+

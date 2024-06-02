@@ -1,4 +1,3 @@
-// see-doctors.component.ts
 import { Component, OnInit } from '@angular/core';
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -10,6 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SeeDoctorsComponent implements OnInit {
   doctors: any[] = [];
+  p: number = 1;  // Current page number
 
   constructor(private doctorService: DoctorsService) { }
 
