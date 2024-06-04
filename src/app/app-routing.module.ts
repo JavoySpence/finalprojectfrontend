@@ -32,14 +32,14 @@ const routes: Routes = [
   { path: 'appointment-list', component: AppointmentListComponent  },
   { path: 'doctors-page', component: DoctorPageComponent },
   { path: 'see-doctors', component: SeeDoctorsComponent },
-  { path: 'create-doctors', component: CreateDoctorsComponent },
+  { path: 'create-doctors', component: CreateDoctorsComponent, canActivate: [AuthGuard] },
   { path: 'create-reschedule', component: CreateRescheduleComponent },
   { path: 'reschedule-appointment', component: RescheduleAppointmentComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: 'feedback-list', component: FeedbackListComponent },
   { path: 'view-feedbacks-page/:id', component: ViewFeedbacksComponent },
   { path: 'doctors-dropdown', component: DoctorsDropdownComponent },
-  { path: 'user-login', component: UserLoginComponent, canActivate: [AuthGuard] },
+  { path: 'user-login', component: UserLoginComponent },
 ];
 
 @NgModule({

@@ -13,9 +13,9 @@ export class AuthServiceService {
   public currentUser?: any;
   private tokenKey: string = 'authToken';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  private _saveToStorage(key: string, value: any){
+  private _saveToStorage(key: string, value: any) {
     localStorage.setItem(key, value);
   }
 
