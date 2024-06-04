@@ -4,6 +4,7 @@
 }
 
 #head {
+   
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400; 
@@ -26,3 +27,21 @@
 #speciality{
   width: 10rem;
 }
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 70%; 
+  margin-right: 10px; 
+}
+
+
+
+.table {
+  width: 100%;
+}
+
+

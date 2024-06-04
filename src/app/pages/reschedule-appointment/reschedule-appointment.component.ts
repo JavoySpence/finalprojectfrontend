@@ -9,6 +9,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class RescheduleAppointmentComponent implements OnInit {
   appointments: any[] = [];
+  p: number = 1; // Current page number
 
   constructor(private rescheduleService: RescheduleServicesService) { }
 
@@ -19,7 +20,6 @@ export class RescheduleAppointmentComponent implements OnInit {
   getAllRescheduledAppointments(): void {
     this.rescheduleService.getAllReschedules().subscribe(
       (data: any) => {
-        console.log('Response data:', data); 
         if (data && data.status === 'success' && Array.isArray(data.data.appointments)) {
           this.appointments = data.data.appointments;
         } else {
@@ -35,16 +35,16 @@ export class RescheduleAppointmentComponent implements OnInit {
   deleteSingleReschedule(id: number): void {
     this.rescheduleService.deleteReschedule(id).subscribe(
       (response: any) => {
-        console.log('Doctor deleted:', response);
-        this.getAllRescheduledAppointments(); 
+        console.log('Appointment deleted:', response);
+        this.getAllRescheduledAppointments();
       },
       (error) => {
-        console.error('Error deleting doctor:', error);
+        console.error('Error deleting appointment:', error);
       }
     );
   }
-
 }
+
 
 // getAllAppointments(): void {
 //   this.appointmentService.allAppointments().subscribe(

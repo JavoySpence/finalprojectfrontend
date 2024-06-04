@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedbackService } from 'src/app/services/feedback-service.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-feedback-list',
@@ -9,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class FeedbackListComponent implements OnInit {
   feedbacks: any[] = [];
-  p: number = 0;
+  p: number = 1;
+
   constructor(private feedbackService: FeedbackService) {}
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class FeedbackListComponent implements OnInit {
           console.error('Invalid data format:', data);
         }
       },
-      (error) => { 
+      (error) => {
         console.error('Error fetching feedbacks:', error);
       }
     );
@@ -35,7 +35,7 @@ export class FeedbackListComponent implements OnInit {
     this.feedbackService.deleteFeedback(id).subscribe(
       (response: any) => {
         console.log('Feedback deleted:', response);
-        this.getAllFeedbacks(); // Refresh the list after deletion
+        this.getAllFeedbacks();
       },
       (error) => {
         console.error('Error deleting feedback:', error);
@@ -43,3 +43,4 @@ export class FeedbackListComponent implements OnInit {
     );
   }
 }
+

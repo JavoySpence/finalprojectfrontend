@@ -4,7 +4,13 @@
       <img src="assets/images/logo-search-grid-1x.png" id="logo" alt="">
     </a>
 
-    <button class="btn btn-primary ms-1">Get Started</button>
+     <button 
+    class="btn btn-primary ms-1"  
+    [routerLink]="['user-login']"
+    
+  >
+    Get Started
+  </button>
 
     <div class="collapse navbar-collapse" id="navToggleMenu" style="width: 20%; color: black">
       <ul class="navbar-nav me-auto nav" id="navbarNav">
@@ -38,23 +44,18 @@
         <li class="nav-item">
           <a routerLink="reschedule-appointment" class="nav-link ml-2">{{ 'RESCHEDULE APPOINTMENT' }}</a>
         </li>
-
         <li class="nav-item">
           <a routerLink="create-reschedule" class="nav-link ml-2">{{ 'CREATE RESCHEDULE' }}</a>
         </li>
-        
         <li class="nav-item">
           <a routerLink="feedback" class="nav-link ml-2">{{ 'FEEDBACK' }}</a>
         </li>
-        
         <li class="nav-item">
           <a routerLink="feedback-list" class="nav-link ml-2">{{ 'FEEDBACK LIST' }}</a>
         </li>
-
         <li class="nav-item">
           <a routerLink="doctors-dropdown" class="nav-link ml-2">{{ 'DOCTORS DROPDOWN' }}</a>
         </li>
-        
       </ul>
     </div>
 
@@ -64,5 +65,3 @@
     </button>
   </div>
 </nav>
-
-

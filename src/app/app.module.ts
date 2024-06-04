@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -18,8 +18,8 @@ import { EditPageComponent } from './pages/edit-page/edit-page.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import {EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component';
-import {ViewPageComponent } from './pages/view-page/view-page.component';
+import { EditDoctorsComponent } from './pages/edit-doctors/edit-doctors.component';
+import { ViewPageComponent } from './pages/view-page/view-page.component';
 import { CreateDoctorsComponent } from './pages/create-doctors/create-doctors.component';
 import { ViewDoctorComponent } from './pages/view-doctor/view-doctor.component';
 import { SeeDoctorsComponent } from './pages/see-doctors/see-doctors.component';
@@ -29,9 +29,9 @@ import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { FeedbackListComponent } from './pages/feedback-list/feedback-list.component';
 import { ViewFeedbacksComponent } from './pages/view-feedbacks-page/view-feedbacks-page.component';
 import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropdown.component';
-
-
-
+import { UserLoginComponent } from './pages/user-login/user-login.component';
+import { MyInterceptorInterceptor } from './my-interceptor.interceptor';  // Make sure the path is correct
+import { AuthServiceService } from './services/auth-service.service';
 
 @NgModule({
   declarations: [
@@ -55,9 +55,8 @@ import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropd
     FeedbackComponent,
     FeedbackListComponent,
     ViewFeedbacksComponent,
-    DoctorsDropdownComponent
-   
-  
+    DoctorsDropdownComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +69,10 @@ import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropd
     NgxPaginationModule,
     CommonModule 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptorInterceptor, multi: true },
+    AuthServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

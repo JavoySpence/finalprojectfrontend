@@ -24,11 +24,9 @@ export class AppointmentService {
       );
   }
 
-  allAppointments(searchTerm: string = '', pageIndex: number = 0, pageSize: number = 10): Observable<any> {
+  allAppointments(searchTerm: string = ''): Observable<any> {
     let params = new HttpParams()
-      .set('searchTerm', searchTerm)
-      .set('page', pageIndex.toString())
-      .set('limit', pageSize.toString());
+      .set('searchTerm', searchTerm);
     
     return this._http.get<any>(this.API_URL, { params })
       .pipe(
@@ -37,6 +35,7 @@ export class AppointmentService {
         })
       );
   }
+  
 
   deleteAppointment(id: number): Observable<any> {
     return this._http.delete<any>(`${this.API_URL}/${id}`).pipe(
@@ -70,4 +69,5 @@ export class AppointmentService {
         })
       );
   }
+
 }

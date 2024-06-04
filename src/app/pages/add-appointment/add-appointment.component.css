@@ -1,0 +1,23 @@
+.table-container {
+    max-height: calc(100vh - 150px); /* Adjust according to the height of your footer and pagination controls */
+    overflow-y: auto;
+  }
+  
+  .table {
+    width: 100%;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .pagination-container {
+    margin-top: 10px; /* Adjust as needed */
+  }
+  

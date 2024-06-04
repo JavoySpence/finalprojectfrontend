@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DoctorsService } from 'src/app/services/doctors.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,8 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './edit-doctors.component.html',
   styleUrls: ['./edit-doctors.component.css']
 })
-export class EditDoctorsComponent implements OnInit {
-  doctorData: any = {}; // Use this to hold the doctor's data
+export class EditDoctorsComponent implements OnInit, AfterViewInit {
+  doctorData: any = {}; 
   @ViewChild('editDoctorForm') editDoctorForm?: NgForm;
 
   constructor(
@@ -25,9 +25,7 @@ export class EditDoctorsComponent implements OnInit {
         (response: any) => {
           if (response.success) {
             this.doctorData = response.data;
-            if (this.editDoctorForm) {
-              this.editDoctorForm.form.patchValue(this.doctorData);
-            }
+            this.patchForm();
           } else {
             console.error('Doctor not found');
           }
@@ -36,6 +34,16 @@ export class EditDoctorsComponent implements OnInit {
           console.error('Error fetching doctor details:', error);
         }
       );
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.patchForm();
+  }
+
+  patchForm(): void {
+    if (this.editDoctorForm && this.doctorData) {
+      this.editDoctorForm.form.patchValue(this.doctorData);
     }
   }
 

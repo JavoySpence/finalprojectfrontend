@@ -10,8 +10,8 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <tr *ngFor="let feedback of feedbacks | paginate: { itemsPerPage: 10, currentPage: p }">
-                <!-- <td>{{ feedback.id }}</td> -->
+            <tr *ngFor="let feedback of feedbacks | paginate: { itemsPerPage: 1, currentPage: p }">
+              
                 <td>{{ feedback.first_name }}</td>
                 <td>{{ feedback.last_name }}</td>
                 <td>{{ feedback.feedback }}</td>
@@ -26,6 +26,6 @@
     </table>
   
     <!-- Pagination Controls -->
-    <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
   

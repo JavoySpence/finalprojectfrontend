@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-list',
@@ -9,22 +10,25 @@ import { Observable } from 'rxjs';
 })
 export class AppointmentListComponent implements OnInit {
   appointments: any[] = [];
+  originalAppointments: any[] = []; // Store the original list
   filteredAppointments: any[] = [];
   totalAppointmentsCount$: Observable<number> | null = null;
   p: number = 1;
   searchTerm: string = '';
 
-  constructor(private appointmentService: AppointmentService) {}
+  constructor(private appointmentService: AppointmentService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllAppointments();
   }
 
-  getAllAppointments(searchTerm: string = ''): void {
-    this.appointmentService.allAppointments(searchTerm).subscribe(
+  getAllAppointments(): void {
+    this.appointmentService.allAppointments().subscribe(
       (data: any) => {
         if (data && data.status === 'success' && Array.isArray(data.data.appointments)) {
           this.appointments = data.data.appointments;
+          // Store the original list
+          this.originalAppointments = data.data.appointments;
           this.filteredAppointments = this.filterAppointments(this.searchTerm);
         } else {
           console.error('Invalid data format:', data);
@@ -40,7 +44,7 @@ export class AppointmentListComponent implements OnInit {
     this.appointmentService.deleteAppointment(id).subscribe(
       (response: any) => {
         console.log('Appointment deleted:', response);
-        this.getAllAppointments(this.searchTerm);
+        this.getAllAppointments(); 
       },
       (error) => {
         console.error('Error deleting appointment:', error);
@@ -49,18 +53,25 @@ export class AppointmentListComponent implements OnInit {
   }
 
   onSearch(): void {
-    const trimmedSearchTerm = this.searchTerm.trim();
-    this.filteredAppointments = this.filterAppointments(trimmedSearchTerm);
+    this.filteredAppointments = this.filterAppointments(this.searchTerm);
   }
 
   private filterAppointments(searchTerm: string): any[] {
-    if (!searchTerm) {
+    if (!searchTerm.trim()) {
       return this.appointments;
     }
+    // Convert search term to date
+    const searchDate = new Date(searchTerm);
+   
     return this.appointments.filter(appointment =>
-      Object.values(appointment).some(val =>
-        String(val).toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      new Date(appointment.appointment_date).toDateString() === searchDate.toDateString()
     );
+  }
+
+  
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event: any) {
+    
+    this.router.navigate(['/appointments']);
   }
 }

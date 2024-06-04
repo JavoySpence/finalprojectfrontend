@@ -1,53 +1,58 @@
-<div style="overflow-x: auto;">
-  <table class="table table-striped" id="appointment_table">
-    <thead class="table-dark" style="width: 100%;">
-      <tr>
-        <th colspan="14">
-          <div style="display: flex; align-items: center; justify-content: center;">
-            <input type="text" [(ngModel)]="searchTerm" placeholder="Search...">
-            <button (click)="onSearch()">Search</button>
-          </div>
-        </th>
-      </tr>
-      <tr>
-        <th class="head" [innerHTML]="'ID'"></th>
-        <th class="head" [innerHTML]="'First&nbsp;Name'"></th>
-        <th class="head" [innerHTML]="'Last&nbsp;Name'"></th>
-        <th class="head" [innerHTML]="'Phone'"></th>
-        <th class="head" [innerHTML]="'Sex'"></th>
-        <th class="head" [innerHTML]="'DOB'"></th>
-        <th class="head" [innerHTML]="'Appointment&nbsp;Date'"></th>
-        <th class="head" [innerHTML]="'Title'"></th>
-        <th class="head" [innerHTML]="'Reason&nbsp;for&nbsp;Visit'"></th>
-        <th class="head" [innerHTML]="'Doctor&nbsp;Name'"></th>
-        <th class="head" [innerHTML]="'Medical&nbsp;History'"></th>
-        <th class="head" [innerHTML]="'Medications&nbsp;Taken'"></th>
-        <th class="head" [innerHTML]="'Email'"></th>
-        <th class="head" [innerHTML]="'Actions'"></th>
-      </tr>
-    </thead>
-    <tbody class="table-group-divider">
-      <tr *ngFor="let appointment of appointments | paginate: { itemsPerPage: 4, currentPage: p }">
-        <td>{{ appointment.id }}</td>
-        <td>{{ appointment.first_name }}</td>
-        <td>{{ appointment.last_name }}</td>
-        <td>{{ appointment.phone }}</td>
-        <td>{{ appointment.sex }}</td>
-        <td class="nowrap">{{ appointment.DOB | date:'mediumDate' }}</td>
-        <td class="nowrap">{{ appointment.appointment_date | date:'mediumDate' }}</td>
-        <td>{{ appointment.title }}</td>
-        <td>{{ appointment.reason_for_visit }}</td>
-        <td>{{ appointment.doctor_name }}</td>
-        <td>{{ appointment.medical_history }}</td>
-        <td>{{ appointment.medications_taken }}</td>
-        <td>{{ appointment.email }}</td>
-        <td class="action-buttons">
-          <a class="btn btn-warning" [routerLink]="['/view-page', appointment.id]">View</a>
-          <a class="btn btn-success" [routerLink]="['/edit-page', appointment.id]">Edit</a>
-          <a class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+<div class="overflow-container">
+  <div class="table-container">
+    <table class="table table-striped" id="appointment_table">
+      <!-- Table header -->
+      <thead class="table-dark">
+        <tr>
+          <th colspan="14">
+            <div class="search-container">
+              <input type="text" [(ngModel)]="searchTerm" placeholder="Search By Appointment date" class="form-control search-input" style="width: 45%; margin-left: 2rem;">
+              <button class="btn btn-primary search-button" (click)="onSearch()">Search</button>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th class="nowrap">ID</th>
+          <th class="nowrap">First Name</th>
+          <th class="nowrap">Last Name</th>
+          <th class="nowrap">Phone</th>
+          <th class="nowrap">Sex</th>
+          <th class="nowrap">DOB</th>
+          <th class="nowrap">Appointment Date</th>
+          <th class="nowrap">Title</th>
+          <th class="nowrap">Reason for Visit</th>
+          <th class="nowrap">Doctor Name</th>
+          <th class="nowrap">Medical History</th>
+          <th class="nowrap">Medications Taken</th>
+          <th class="nowrap">Email</th>
+          <th class="nowrap">Actions</th>
+        </tr>
+      </thead>
+      <!-- Table body -->
+      <tbody>
+        <tr *ngFor="let appointment of filteredAppointments | paginate: { itemsPerPage: 5, currentPage: p }">
+          <td>{{ appointment.id }}</td>
+          <td>{{ appointment.first_name }}</td>
+          <td>{{ appointment.last_name }}</td>
+          <td>{{ appointment.phone }}</td>
+          <td>{{ appointment.sex }}</td>
+          <td class="nowrap">{{ appointment.DOB | date:'mediumDate' }}</td>
+          <td class="nowrap">{{ appointment.appointment_date | date:'mediumDate' }}</td>
+          <td>{{ appointment.title }}</td>
+          <td>{{ appointment.reason_for_visit }}</td>
+          <td>{{ appointment.doctor_name }}</td>
+          <td>{{ appointment.medical_history }}</td>
+          <td>{{ appointment.medications_taken }}</td>
+          <td>{{ appointment.email }}</td>
+          <td class="action-buttons">
+            <a class="btn btn-warning" [routerLink]="['/view-page', appointment.id]">View</a>
+            <a class="btn btn-success" [routerLink]="['/edit-page', appointment.id]">Edit</a>
+            <button class="btn btn-danger me-2" (click)="deleteAppointment(appointment.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
 </div>
