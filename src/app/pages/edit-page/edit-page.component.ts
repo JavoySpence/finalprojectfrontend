@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-page',
@@ -49,6 +50,9 @@ export class EditPageComponent implements OnInit {
       this.appointmentService.updateAppointment(this.id, oForm.value).subscribe(res => {
         if (res['status'] === 'success') {
           this.router.navigateByUrl('/appointments');
+          Swal.fire(
+            'UPDATED'
+          );
         }
       });
     }

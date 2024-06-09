@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorsService } from 'src/app/services/doctors.service';
+import Swal from 'sweetalert2';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -36,12 +37,18 @@ export class DoctorPageComponent implements OnInit {
     this.doctorService.deleteDoctor(id).subscribe(
       (response: any) => {
         console.log('Doctor deleted:', response);
-        this.getAllDoctors(); 
+     
+        this.getAllDoctors();
+        
+        Swal.fire('Deleted!', 'The doctor has been deleted.', 'success');
       },
       (error) => {
         console.error('Error deleting doctor:', error);
+        
+        Swal.fire('Error!', 'Failed to delete the doctor.', 'error');
       }
     );
   }
 }
+
 

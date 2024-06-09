@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
+import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -36,17 +37,20 @@ export class AddAppointmentComponent implements OnInit {
    this.getAllDoctors();
  }
 
-  addAppointment2(myForm: NgForm){
-    const addApp = this.appointmentService.newAppointments(myForm.value).subscribe({
-      next: (res) => {
-        console.log('Appointment added successfully:', res);
-        this.router.navigate(['/appointments']);
-      },
-      error: (error) => {
-        console.error('Error adding appointment:', error);
-      }
-    });
-  }
+  addAppointment2(myForm: NgForm): void {
+  const addApp = this.appointmentService.newAppointments(myForm.value).subscribe({
+    next: (res) => {
+      console.log('Appointment added successfully:', res);
+      Swal.fire('Appointment added successfully!');
+      this.router.navigate(['/appointments']);
+    },
+    error: (error) => {
+      console.error('Error adding appointment:', error);
+      alert('Error adding appointment. Please try again later.');
+    }
+  });
+}
+
 
 
   getAllDoctors(): void {

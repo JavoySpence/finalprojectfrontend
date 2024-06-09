@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { AppointmentService } from 'src/app/services/appointment.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-appointment-list',
@@ -45,6 +46,9 @@ export class AppointmentListComponent implements OnInit {
       (response: any) => {
         console.log('Appointment deleted:', response);
         this.getAllAppointments(); 
+        Swal.fire(
+          'DELETED'
+        );
       },
       (error) => {
         console.error('Error deleting appointment:', error);

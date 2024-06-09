@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DoctorsService } from 'src/app/services/doctors.service';
+import Swal from 'sweetalert2';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -53,13 +54,22 @@ export class EditDoctorsComponent implements OnInit, AfterViewInit {
       this.doctorsService.updateDoctor(doctorId, this.doctorData).subscribe(
         (response: any) => {
           if (response.success) {
+            // Doctor updated successfully
+            // Optionally, show a success message
+            Swal.fire('Updated!', 'The doctor details have been updated.', 'success');
+            // Navigate to the doctors page or any other route
             this.router.navigate(['/doctors']);
           } else {
+        
             console.error('Error updating doctor');
+         
+            Swal.fire('Error!', 'Failed to update the doctor.', 'error');
           }
         },
         (error: any) => {
           console.error('Error updating doctor:', error);
+        
+          Swal.fire('Error!', 'Failed to update the doctor.', 'error');
         }
       );
     }

@@ -42,7 +42,7 @@
 
     <div class="form-group">
       <label for="doctor_name">Doctor Name</label><br>
-      <select class="form-control" id="title" name="title" ngModel required>
+      <select class="form-control" id="title" name="doctor_name" ngModel required>
         <option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.first_name }} {{ doctor.last_name }}</option>
       </select><br><br>
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FeedbackService } from 'src/app/services/feedback-service.service';
+import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -28,10 +29,20 @@ export class FeedbackComponent implements OnInit {
       const formData = feedbackForm.value;
       this.feedbackService.createFeedback(formData).subscribe(
         (response: any) => {
-          console.log('Feedback created:', response);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Feedback created successfully.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
         },
         (error) => {
-          console.error('Error creating feedback:', error);
+          Swal.fire({
+            title: 'Error!',
+            text: 'Error creating feedback. Please try again.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          });
         }
       );
     }

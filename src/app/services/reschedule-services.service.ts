@@ -12,13 +12,16 @@ export class RescheduleServicesService {
   constructor(private http: HttpClient) { }
 
   getAllReschedules(): Observable<any> {
+   
     return this.http.get<any>(this.API_URL)
       .pipe(
         map((res) => {
+          
           return res;
         })
       );
   } 
+  
 
   createReschedule(data: any): Observable<any> {
     return this.http.post<any>(this.API_URL, data)

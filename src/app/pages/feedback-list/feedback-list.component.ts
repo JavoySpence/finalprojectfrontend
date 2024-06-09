@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { FeedbackService } from 'src/app/services/feedback-service.service';
 
 @Component({
@@ -30,17 +31,22 @@ export class FeedbackListComponent implements OnInit {
       }
     );
   }
-
   deleteFeedback(id: number): void {
     this.feedbackService.deleteFeedback(id).subscribe(
       (response: any) => {
         console.log('Feedback deleted:', response);
+       
         this.getAllFeedbacks();
+       
+        Swal.fire('Deleted!', 'The feedback has been deleted.', 'success');
       },
       (error) => {
         console.error('Error deleting feedback:', error);
+      
+        Swal.fire('Error!', 'Failed to delete the feedback.', 'error');
       }
     );
   }
 }
+
 

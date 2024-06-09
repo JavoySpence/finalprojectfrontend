@@ -13,7 +13,7 @@ export class RescheduleAppointmentComponent implements OnInit {
 
   constructor(private rescheduleService: RescheduleServicesService) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.getAllRescheduledAppointments();
   }
 
@@ -44,20 +44,3 @@ export class RescheduleAppointmentComponent implements OnInit {
     );
   }
 }
-
-
-// getAllAppointments(): void {
-//   this.appointmentService.allAppointments().subscribe(
-//     (data: any) => {
-//       if (data && data.status === 'success' && Array.isArray(data.data.appointments)) {
-//         this.appointments = data.data.appointments;
-//       } else {
-//         console.error('Invalid data format:', data);
-//       }
-//     },
-//     (error) => {
-//       console.error('Error fetching appointments:', error);
-//     }
-//   );
-// }
-

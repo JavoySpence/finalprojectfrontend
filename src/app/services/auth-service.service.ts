@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  private API_URL = 'http://localhost:8081/api/v1/users2';
+  private API_URL = 'http://localhost:8081/api/v1/users';
   public authToken?: string;
   public currentUser?: any;
   private tokenKey: string = 'authToken';
@@ -56,7 +56,9 @@ export class AuthServiceService {
 
   logout() {
     localStorage.removeItem(this.tokenKey);
+    this.currentUser = null;
   }
+  
 
   protect(): Observable<any> {
     return this.http.get<any>(`${this.API_URL}/verify`);
