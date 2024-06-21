@@ -1,0 +1,43 @@
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)" style="margin-top: 7rem;">
+   
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="email">Email address</label>
+        <input type="email" id="email" class="form-control" name="email"   ngModel  required />
+    </div>
+
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" id="password" class="form-control" name="password" ngModel    required />
+    </div>
+
+    <!-- Role input -->
+    <!-- <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="role">Role</label>
+        <input type="text" id="role" class="form-control" ngModel name="role" ngModel    required />
+    </div> -->
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+    <!-- Register buttons (optional) -->
+    <div class="text-center">
+        <p>Not a member? <a href="#!">Register</a></p>
+        <p>or sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-facebook-f"></i>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-google"></i>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-twitter"></i>
+        </button>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+            <i class="fab fa-github"></i>
+        </button>
+    </div>
+</form>
+
+

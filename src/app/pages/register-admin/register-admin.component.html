@@ -1,0 +1,52 @@
+<!-- register-admin.component.html -->
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" style="margin-top: 7rem;">
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="first_name">Firstname</label>
+      <input type="text" id="first_name" class="form-control" name="first_name" ngModel required />
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="last_name">Lastname</label>
+      <input type="text" id="last_name" class="form-control" name="last_name" ngModel required />
+    </div>
+  
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="email">Email address</label>
+      <input type="email" id="email" class="form-control" name="email" ngModel required />
+    </div>
+  
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="password">Password</label>
+      <input type="password" id="password" class="form-control" name="password" ngModel required />
+    </div>
+  
+    <!-- <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="role">Role</label>
+      <select id="role" class="form-control" name="role" ngModel required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div> -->
+  
+    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+  
+    <div class="text-center">
+      <p>Already a member? <a href="#!">Login</a></p>
+      <p>or sign up with:</p>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-facebook-f"></i>
+      </button>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-google"></i>
+      </button>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-twitter"></i>
+      </button>
+      <button type="button" class="btn btn-link btn-floating mx-1">
+        <i class="fab fa-github"></i>
+      </button>
+    </div>
+  </form>
+  

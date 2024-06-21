@@ -34,6 +34,9 @@ import { MyInterceptorInterceptor } from './my-interceptor.interceptor';
 import { AuthGuard } from './auth.guard';
 import { AdminPagesComponent } from './pages/admin-pages/admin-pages.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { RegisterAdminComponent } from './pages/register-admin/register-admin.component';
+import { UserLogin2Component } from './user-login2/user-login2.component';
+import { UserpagesComponent } from './pages/userpages/userpages.component';
 
 
 
@@ -63,6 +66,9 @@ import { LogoutComponent } from './pages/logout/logout.component';
     UserLoginComponent,
     AdminPagesComponent,
     LogoutComponent,
+    RegisterAdminComponent,
+    UserLogin2Component,
+    UserpagesComponent,
 
   ],
   imports: [

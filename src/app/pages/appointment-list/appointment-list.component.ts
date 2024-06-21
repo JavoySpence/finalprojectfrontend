@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class AppointmentListComponent implements OnInit {
   appointments: any[] = [];
-  originalAppointments: any[] = []; // Store the original list
+  originalAppointments: any[] = []; 
   filteredAppointments: any[] = [];
   totalAppointmentsCount$: Observable<number> | null = null;
   p: number = 1;

@@ -19,27 +19,34 @@ import { DoctorsDropdownComponent } from './pages/doctors-dropdown/doctors-dropd
 import { UserLoginComponent } from './pages/user-login/user-login.component';
 import {AdminPagesComponent} from './pages/admin-pages/admin-pages.component'
 import { AuthGuard } from './auth.guard';
+import { AdminGuardGuard } from './admin-guard.guard';
+import { RegisterAdminComponent } from './pages/register-admin/register-admin.component';
+import { UserLogin2Component } from './user-login2/user-login2.component';
+import { UserpagesComponent } from './pages/userpages/userpages.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   { path: 'homepage', component: HomepageComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact', component: ContactUsComponent },
-  { path: 'add-appointment', component: AddAppointmentComponent },
+  { path: 'add-appointment', component: AddAppointmentComponent, canActivate: [AdminGuardGuard] },
   { path: 'edit-page/:id', component: EditPageComponent },
   { path: 'edit-doctors/:id', component: EditDoctorsComponent },
   { path: 'view-page/:id', component: ViewPageComponent },
   { path: 'appointment-list', component: AppointmentListComponent},
   { path: 'doctors-page', component: DoctorPageComponent },
-  { path: 'create-doctors', component: CreateDoctorsComponent },
+  { path: 'create-doctors', component: CreateDoctorsComponent},
   { path: 'create-reschedule', component: CreateRescheduleComponent},
   { path: 'reschedule-appointment', component: RescheduleAppointmentComponent },
   { path: 'feedback', component: FeedbackComponent },
   { path: 'feedback-list', component: FeedbackListComponent },
   { path: 'view-feedbacks-page/:id', component: ViewFeedbacksComponent },
   { path: 'doctors-dropdown', component: DoctorsDropdownComponent },
-  { path: 'user-login', component: UserLoginComponent }, 
-  { path: 'admin-pages', component: AdminPagesComponent, canActivate: [AuthGuard] }
+  { path: 'user-login', component: UserLoginComponent },
+  {path: 'user-login2', component: UserLogin2Component},
+  {path: 'register-admin', component: RegisterAdminComponent},
+  { path: 'admin-pages', component: AdminPagesComponent, canActivate: [AuthGuard] },
+  {path: 'userpages', component: UserpagesComponent, canActivate: [AdminGuardGuard] }
 ];
 
 @NgModule({
